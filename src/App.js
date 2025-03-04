@@ -5,6 +5,9 @@ import UsersList from './components/UsersList';
 import Header from './components/Header';
 import { Route, Routes } from 'react-router-dom';
 import SingleProduct from './components/SingleProduct';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -12,8 +15,13 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/prod' element={ <ProductList/> }/>
-        <Route path='/users' element={ <UsersList/> }/>
+        
         <Route path='/prod/:id' element={<SingleProduct/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/admin' element={<Dashboard/>}>
+        <Route index element={<UsersList/>}/>
+        </Route>
       </Routes>
           
 

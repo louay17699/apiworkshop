@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import Herosection from './Herosection';
 
 function ProductList() {
     const [products,setproducts]=useState([])
@@ -13,7 +14,10 @@ function ProductList() {
     
     
   return (
+    <>
+     <div style={{height:"600px"}}><Herosection/></div>
     <div style={{display:"flex",justifyContent:"center",alignItems:"start",gap:"10px",flexWrap:"wrap"}}>
+       
         {products.map(product=>
         <Link to={"/prod/"+product.id}>
                 <Card key={product.id} style={{ width: '18rem' }}>
@@ -35,6 +39,7 @@ function ProductList() {
               </Link>
         )}
     </div>
+    </>
   )
 }
 
